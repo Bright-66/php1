@@ -6,14 +6,33 @@
     <title>BMI結果</title>
 </head>
 <body>
-    
-<h1>BMI結果</h1>
-<div>您的身高:<?=$_GET['height'];?>公分</div>
-<div>您的體重:<?=$_GET['weight'];?>公斤</div>
 <?php
-$h=$_GET['height']/100;
+if(isset($_GET['height'])){
+$height=$_GET['height'];
+}else if(isset($_POST['height'])){
+    $height=$_POST['height'];
+}else{
+echo "請使用正確管道進到此頁面!";
+exit();
+}
+
+if(isset($_GET['weight'])){
+    $weight=$_GET['weight'];
+    }else if(isset($_POST['weight'])){
+        $weight=$_POST['weight'];
+    }else{ 
+    echo "請使用正確管道進到此頁面!";
+    exit();
+    }
+?>
+
+<h1>BMI結果</h1>
+<div>您的身高:<?=$height;?>公分</div>
+<div>您的體重:<?=$weight;?>公斤</div>
+<?php
+$h=$height/100;
 // 取小數點第二位
-$bmi=round($_GET['weight']/($h * $h),2);
+$bmi=round($weight/($h * $h),2);
 if($bmi<18.5){
  $level="體重過輕";
 }else if($bmi<24){
@@ -27,17 +46,15 @@ $level="過重";
     $level="中度肥胖";
 
 }else{
-    $level="種度肥胖";
+    $level="重度肥胖";
 }
-
 
 ?>
 <div>您的BMI:<?=$bmi;?></div>
 <div>體位判定為:<?=$level;?></div>
 <div>
-<a href="inedx.php">回首頁/重新量測</a>
+<a href="index.php?bmi=<?=$bmi;?>">回首頁/重新量測</a>
 </div>
-
 
 </body>
 </html>
