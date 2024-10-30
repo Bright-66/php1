@@ -1,11 +1,4 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>登入</title>
-
-    <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
     <meta charset="UTF-8">
@@ -57,7 +50,10 @@
     </style>
 </head>
 <body>
-
+<?php
+session_start();
+if(!isset($_SESSION['login'])){
+?>
     <div class="login-container">
         <h2>登入</h2>
         <form action="check_acc.php" method="post">
@@ -67,5 +63,14 @@
         </form>
     </div>
 
+    <?php
+}else{
+?>
+        <div>
+            你已登入
+        </div>
+<?php
+}
+?>
 </body>
 </html>
