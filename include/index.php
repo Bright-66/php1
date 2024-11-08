@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>首頁</h1>
+    <h1>首頁</h1> 
     <?php include("common/navbar.php"); ?>
 
     <main>
