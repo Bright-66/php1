@@ -6,7 +6,7 @@
     <title>Document</title>
 </head>
 <body>
-<h1>登入成功</h1>
+<h1>更新成功</h1>
 
 <?php
 
