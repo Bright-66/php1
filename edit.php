@@ -18,9 +18,9 @@ $dsn="mysql:host=localhost;charset=utf8;dbname=crud";
 $pdo=new PDO($dsn,'root','');
 
 if($pdo->exec($sql)){
-header("location:success.php?status=1");
+header("location:success1.php?status=1");
 }else{
-    header("location:success.php?status=0");
+    header("location:success1.php?status=0");
 }
 
 ?>
