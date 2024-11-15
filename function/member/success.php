@@ -9,12 +9,15 @@
     <h1>登入成功</h1>
 
 <?php
-$dsn="mysql:host=localhost;charset=utf8;dbname=crud";
-$pdo=new PDO($dsn,'root','');
-
-$rows=$pdo->query("select * from member")->fetchAll(PDO::FETCH_ASSOC);
-
+// include 把function.php程式帶入
+include "../function.php";
+$rows=all("member");
+// member 為資料庫設定的1個資料表名
 ?>
+
+<!-- $dsn="mysql:host=localhost;charset=utf8;dbname=crud";
+$pdo=new PDO($dsn,'root','');
+$rows=$pdo->query("select * from member")->fetchAll(PDO::FETCH_ASSOC); -->
 
 <table>
     <tr>
@@ -41,7 +44,6 @@ foreach($rows as  $row){
         </td>
     </tr>
     <?php
-
 }
 ?>
 </table>

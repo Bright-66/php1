@@ -103,6 +103,16 @@
             <input type="reset" value="重置">
         </div>
     </form>
+<?php
+// 把上一層的程式拉進來!
+include "../function.php";
+starts('倒直角三角形',21);
+
+// ./ 同層
+//     ../上一層
+//     ../../上上一層
+?>
+
 </body>
 
 </html>
